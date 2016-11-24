@@ -1,9 +1,9 @@
 <?php
 
 return [
-    "publisher-name" => "pina-colada",
+    "publisher-name" => "hamiltonelectors",
     "asset-host" => "",
     "api-host" => "http://sketches.quintype.com",
     "image-cdn" => "//quintype-01.imgix.net",
-    "title" => "Pina Colada"
+    "title" => "Hamilton Electors"
 ];
