@@ -1,4 +1,8 @@
 <?php
+// These routes are localhost ONLY.
+Route::get('/qlitics.js', "ProxyController@proxyGet");
+Route::get('/api/{route}', "ProxyController@proxyGet")->where('route', '.*');
+Route::post('/api/{route}', "ProxyController@proxyPost")->where('route', '.*');
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +22,15 @@ Route::get('/ping', function () {
 });
 
 Route::get('/preview/home', 'PreviewController@home');
+
+Route::get('/preview/story', 'PreviewController@story');
+
+Route::get('/section/{section}', 'HomeController@section');
+
+Route::get('/{category}/{y}/{m}/{d}/{slug}', 'HomeController@story');
+
+Route::get('/author/{authorId}', 'HomeController@author');
+
+Route::get('/tag', 'HomeController@tag');
+
+Route::get('/search', 'HomeController@search');

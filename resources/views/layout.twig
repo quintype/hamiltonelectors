@@ -1,36 +1,59 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Quintype Sample App</title>
-    <link rel="stylesheet" type="text/css" href="{{ assetPath("application.css") }}"/>
-  </head>
-  <body>
-    <script type="text/javascript">var qtReady = qtReady || [];</script>
-    <div class="body-container">
+<head>
+  {{ meta.display([], true)|raw }}
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <link rel="stylesheet" type="text/css" href="{{ assetPath("application.css") }}"/>
+
+  <!-- Qlitics Snippet -->
+  <script>
+    window.qlitics=window.qlitics||function(){(qlitics.q=qlitics.q||[]).push(arguments);};
+    qlitics('init');
+    qlitics('track', 'page-view', {'page-type': '{{page["type"]}}' });
+  </script>
+  <script async src='/qlitics.js'></script>
+  <!-- End Qlitics Snippet -->
+</head>
+<body>
+  <script type="text/javascript">var qtReady = qtReady || [];</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <div class="body-container">
+
+    <nav class="nav-fixed">
       <div class="layout-menu">
-	{% block menu %}
-	<ul>
-	  {% for menuItem in config.menuItems() %}
-	  <li><a href="{{menuItem.url()}}">{{menuItem.title()}}</a></li>
-	  {% endfor %}
-	</ul>
-	{% endblock %}
+        {% block navigation %}
+          {% include "shared/header" %}
+        {% endblock %}
       </div>
-      <div class="layout-content">
-	<div id="container">
-	  {% block content %}{% endblock %}
-	</div>
+    </nav>
+
+    <section class="layout-content">
+      <div id="container">
+        {% block content %}{% endblock %}
       </div>
-      <div class="clear"></div>
-    </div>
-    <script type="text/javascript">
-      var qtConfig = {
-        "image-cdn": "{{config("quintype.image-cdn")}}"
-      };
-    </script>
-    <script type="text/javascript" src="{{ assetPath("application.js") }}"></script>
-    <script type="text/javascript">
-      app.initQtReady();
-    </script>
-  </body>
+    </section>
+
+    <div class="clear"></div>
+
+    <footer class="page-footer">
+      <div class="container">
+        {% block footer %}
+          {% include "shared/footer" %}
+        {% endblock %}
+      </div>
+    </footer>
+
+  </div>
+  <script type="text/javascript">
+    var qtConfig = {
+    "image-cdn": "{{config("quintype.image-cdn")}}"
+    };
+  </script>
+  <script type="text/javascript" src="{{ assetPath("application.js") }}"></script>
+  <!-- adding slick files -->
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+  <script type="text/javascript">
+    app.initQtReady();
+  </script>
+</body>
 </html>
