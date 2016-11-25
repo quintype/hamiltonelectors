@@ -3,7 +3,7 @@
 return [
     "publisher-name" => "hamiltonelectors",
     "asset-host" => "",
-    "api-host" => "http://sketches.quintype.com",
+    "api-host" => "http://hamiltonelectors.staging.quintype.io/",
     "image-cdn" => "//quintype-01.imgix.net",
     "title" => "Hamilton Electors"
 ];
