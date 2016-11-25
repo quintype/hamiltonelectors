@@ -1,0 +1,17 @@
+@function em($pixels, $context: 16) {
+  @return ($pixels / $context) * 1em;
+}
+
+$headerspace: em(20);
+$phone: max-width em(480);
+$phone1: min-width em(320);
+$phone-landscape: min-width em(481);
+$tablet: min-width em(600);
+$tablet-max: max-width em(768);
+$tablet-large: min-width em(769);
+$tablet-landscape: max-width em(1023);
+$pc: min-width em(1024);
+
+$z-index1:1;
+$z-index2:2;
+$z-index3:3;
