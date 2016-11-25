@@ -34,3 +34,5 @@ Route::get('/author/{authorId}', 'HomeController@author');
 Route::get('/tag', 'HomeController@tag');
 
 Route::get('/search', 'HomeController@search');
+
+Route::get('/take_action', 'PreviewController@takeaction');

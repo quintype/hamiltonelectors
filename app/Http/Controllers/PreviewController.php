@@ -15,4 +15,9 @@ class PreviewController extends QuintypeController
     {
         return view('previews/preview_story', $this->toView([]));
     }
+    public function takeaction()
+    {
+        return view('action/body', $this->toView([]));
+    }
+
 }
