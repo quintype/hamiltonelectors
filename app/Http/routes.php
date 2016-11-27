@@ -36,3 +36,6 @@ Route::get('/tag', 'HomeController@tag');
 Route::get('/search', 'HomeController@search');
 
 Route::get('/take_action', 'PreviewController@takeaction');
+Route::get('/whoweare', 'PreviewController@whoare');
+Route::get('/faq', 'PreviewController@faq');
+Route::get('/stayintouch', 'PreviewController@stayintouch');

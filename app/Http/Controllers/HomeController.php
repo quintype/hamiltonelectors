@@ -181,9 +181,5 @@ class HomeController extends QuintypeController{
       }
     }
 
-      public function takeaction(){
-              return view("action/body", $this->toView());
-      }
-
 
 }
